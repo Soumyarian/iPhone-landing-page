@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .text-gradient {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-400 bg-clip-text text-transparent;
+  }
+  .quote-text {
+    @apply text-sm font-medium lg:font-medium lg:text-3xl translate-y-10 moveUpAnimation text-gradient;
+  }
+}
+
+@keyframes moveUp {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.moveUpAnimation {
+  animation: moveUp 2.5s ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 1px 1px 10px rgb(240, 171, 252);
+  }
+  50% {
+    box-shadow: 2px 2px 25px rgb(240, 171, 252);
+  }
+  100% {
+    box-shadow: 1px 1px 10px rgb(240, 171, 252);
+  }
+}
+
+.gradientShadow {
+  animation: glow 3s ease infinite;
+}
